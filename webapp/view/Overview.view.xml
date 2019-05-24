@@ -1,0 +1,55 @@
+<mvc:View displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="utg.app.controller.App" xmlns:l="sap.ui.layout">
+		<Page title="Application Development with SAPUI5">
+				<content>
+					<IconTabBar id="idTabBar">
+						<items>
+							<IconTabFilter id="idFirstTab" text="{i18n>Tab1}" icon="sap-icon://begin">
+								<Button text="{i18n>buttonText}" type="Reject" press="onPress"/>
+								<Input value="{/ProductSet('HT-1001')/Name}" description="Welcome to {appData>/Company/name}" valueLiveUpdate="true" width="60%"/>
+								<Carousel>
+									<pages>
+										<Image src="http://pngriver.com/wp-content/uploads/2018/04/Download-Avengers-Free-Download-PNG.png" width="50%"/>
+										<Image
+											src="https://banner2.kisspng.com/20180203/gtw/kisspng-captain-america-black-widow-clint-barton-iron-man-avengers-transparent-png-5a75cef7ca2d19.1288351915176701358281.jpg"
+											width="50%"/>
+									</pages>
+								</Carousel>
+							</IconTabFilter>
+							<IconTabFilter id="idSecondTab" text="{i18n>Tab2}" icon="sap-icon://detail-view">
+								<content>
+									<MessageStrip text="Default (Information) with default icon and close button:" showIcon="true" showCloseButton="true"
+										class="sapUiMediumMarginBottom"></MessageStrip>
+									<List id="idProductsList" items="{path:'/ProductSet', sorter:{ path:'Category',group:true}}" growing="true" growingThreshold="5">
+										<headerToolbar>
+											<Toolbar>
+												<Title text="{i18n>headerTitle}"/>
+												<ToolbarSpacer/>
+												<SearchField width="50%" liveChange="onFilterProducts"/>
+												<Button id="creatButton" icon="sap-icon://create-form" text="Create" press="onCreate" />
+											</Toolbar>
+										</headerToolbar>
+										<items>
+											<ObjectListItem title="{Name}" number="{Price}" intro="{ProductID}" numberUnit="{CurrencyCode}"
+												numberState="{=${Price}> 200 ? 'Error' : 'Success'}" press="onItemSelected" type="Active">
+												<firstStatus>
+													<ObjectStatus text="{ path: 'Price', formatter: '.formatter.status' }"/>
+												</firstStatus>
+											</ObjectListItem>
+										</items>
+									</List>
+									<!--<Panel id="idDetailPanel" headerText="{i18n>panelHeader}" visible="false">
+										<l:Grid>
+											<Text text="{i18n>ProductID}:{ProductID}"/>
+											<Text text="Name: {Name}"/>
+											<Text text="Description: {Description}"/>
+											<Text text="Supplier Name : {SupplierName}"/>
+											<Text text="Price : {Price}"/>
+										</l:Grid>
+									</Panel>-->
+								</content>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+			</Page>
+</mvc:View>

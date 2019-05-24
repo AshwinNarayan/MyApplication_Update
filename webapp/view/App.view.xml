@@ -1,0 +1,3 @@
+<mvc:View displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="utg.app.controller.App" xmlns:l="sap.ui.layout">
+	<App id="app"></App>
+</mvc:View>

@@ -1,0 +1,15 @@
+<mvc:View displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" controllerName="utg.app.controller.Detail">
+	<Page title="Detail">
+		<content>
+			<Panel id="idDetailPanel" headerText="{i18n>panelHeader}" visible="true">
+				<l:Grid>
+					<Text text="{i18n>ProductID}:{ProductID}"/>
+					<Text text="Name: {Name}"/>
+					<Text text="Description: {Description}"/>
+					<Text text="Supplier Name : {SupplierName}"/>
+					<Text text="Price : {Price}"/>
+				</l:Grid>
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>
